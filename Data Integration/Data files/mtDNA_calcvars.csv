@@ -1,0 +1,201 @@
+id,Age,Race,Gender,Income,Income_4cat,ED_Cat,Exercise_cat,Smoke,Wbc,Urbangrp,BMI
+46,58,W,F,7,$35k-$74k,College graduate and above,None,Past,6.43,Urban(>=75% urban),24.689125911
+757,48,B,F,9,$75k and above,Some college,None,Never,9.63,Urban(>=75% urban),27.856185537
+1678,74,B,F,4,less than $20k,Some college,4 or more per week,Never,,Urban(>=75% urban),19.171610046
+2176,52,B,F,7,$35k-$74k,Some college,None,Current,5.6,Urban(>=75% urban),40.745118729
+2713,59,W,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,4.11,Urban(>=75% urban),28.188906215
+4109,70,B,M,8,$35k-$74k,High school graduate,1 to 3 time per week,Never,,Urban(>=75% urban),26.605752595
+4350,74,B,M,6,$20k-$34k,College graduate and above,1 to 3 time per week,Past,7.87,,24.401275952
+5758,65,B,F,5,$20k-$34k,High school graduate,None,Past,4.06,Urban(>=75% urban),48.415977961
+8204,55,B,F,6,$20k-$34k,High school graduate,4 or more per week,Never,,Urban(>=75% urban),41.231176011
+8420,61,W,M,6,$20k-$34k,Some college,None,Past,,Urban(>=75% urban),
+8718,64,B,F,3,less than $20k,Less than high school,4 or more per week,Never,,Urban(>=75% urban),46.671402227
+9213,73,B,M,9,$75k and above,Some college,4 or more per week,Past,5.59,Urban(>=75% urban),24.202259279
+12340,50,B,M,6,$20k-$34k,High school graduate,None,Current,,Urban(>=75% urban),36.816504662
+13351,59,B,F,5,$20k-$34k,Some college,1 to 3 time per week,Past,4.99,,32.341066825
+14552,79,W,F,,Refused,High school graduate,None,Never,3.54,Urban(>=75% urban),30.893554688
+14874,78,B,F,6,$20k-$34k,College graduate and above,None,Past,4.5,Urban(>=75% urban),20.593120129
+18554,64,B,M,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,6.52,Urban(>=75% urban),22.786032524
+18732,64,B,F,5,$20k-$34k,Some college,None,Never,7.66,Urban(>=75% urban),32.39424
+19161,72,W,F,8,$35k-$74k,College graduate and above,4 or more per week,Never,4.02,Urban(>=75% urban),28.42538078
+19291,58,B,F,7,$35k-$74k,Some college,1 to 3 time per week,Never,4.45,Rural(<=25% urban),29.69513315
+21015,55,B,F,9,$75k and above,High school graduate,1 to 3 time per week,Current,7.9,Urban(>=75% urban),30.893554688
+21445,64,B,M,5,$20k-$34k,High school graduate,4 or more per week,Past,,Urban(>=75% urban),38.460526316
+22170,60,W,F,9,$75k and above,High school graduate,1 to 3 time per week,Never,7.61,Rural(<=25% urban),38.152524168
+23735,57,B,F,7,$35k-$74k,High school graduate,None,Past,5.57,Urban(>=75% urban),38.768382353
+23954,65,B,F,4,less than $20k,Some college,None,Past,5.96,Urban(>=75% urban),33.726228095
+28006,74,B,M,6,$20k-$34k,Some college,4 or more per week,Current,7.46,Mixed(25-75% urban),23.841970448
+28861,49,W,F,9,$75k and above,Less than high school,1 to 3 time per week,Never,8.46,Urban(>=75% urban),37.587158203
+28969,55,B,M,4,less than $20k,College graduate and above,1 to 3 time per week,Past,,Urban(>=75% urban),29.798442907
+29491,61,W,M,8,$35k-$74k,Some college,4 or more per week,Never,5.66,Urban(>=75% urban),37.302040816
+30917,61,B,F,6,$20k-$34k,Less than high school,1 to 3 time per week,Past,5.44,Urban(>=75% urban),32.767164481
+32842,49,B,F,7,$35k-$74k,Some college,1 to 3 time per week,Current,5.12,Urban(>=75% urban),31.090010406
+33307,50,B,F,6,$20k-$34k,Some college,1 to 3 time per week,Current,6.59,Urban(>=75% urban),29.80211661
+34330,58,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Never,,Urban(>=75% urban),25.84015963
+36383,55,W,M,,Refused,High school graduate,1 to 3 time per week,Past,,Mixed(25-75% urban),29.494377163
+36603,68,B,F,4,less than $20k,Less than high school,1 to 3 time per week,Current,3.87,Urban(>=75% urban),33.356872355
+38678,68,B,M,6,$20k-$34k,College graduate and above,4 or more per week,Past,4.76,Urban(>=75% urban),28.995523364
+39641,80,W,F,7,$35k-$74k,Some college,1 to 3 time per week,Never,4.94,Urban(>=75% urban),26.087890625
+40073,62,B,F,7,$35k-$74k,High school graduate,1 to 3 time per week,Never,,Urban(>=75% urban),37.550012598
+40909,60,W,F,6,$20k-$34k,Some college,4 or more per week,Past,,Mixed(25-75% urban),43.062385642
+42515,58,W,F,,Refused,College graduate and above,1 to 3 time per week,Never,4.91,Urban(>=75% urban),21.915614082
+43614,47,W,F,6,$20k-$34k,High school graduate,1 to 3 time per week,Past,4.37,,34.978907518
+45206,62,B,F,4,less than $20k,Some college,None,Never,6.81,Urban(>=75% urban),33.96502614
+46493,70,W,M,6,$20k-$34k,Some college,1 to 3 time per week,Never,,Urban(>=75% urban),31.926903114
+49224,68,B,F,4,less than $20k,Less than high school,None,Current,5.7,Urban(>=75% urban),23.080043642
+49500,59,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Never,,Urban(>=75% urban),30.102508651
+52407,75,B,F,2,less than $20k,Some college,None,Never,,Urban(>=75% urban),26.453719723
+52889,52,B,F,3,less than $20k,Less than high school,1 to 3 time per week,Never,2.69,Urban(>=75% urban),51.538970014
+54076,68,W,M,6,$20k-$34k,Some college,1 to 3 time per week,Past,4.41,,28.719491703
+56091,68,W,M,8,$35k-$74k,Some college,None,Never,9.93,Urban(>=75% urban),29.998144712
+62875,64,W,M,8,$35k-$74k,College graduate and above,4 or more per week,Past,8.62,Urban(>=75% urban),28.032301181
+64039,65,W,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,6.23,Urban(>=75% urban),28.242653811
+64334,73,B,F,4,less than $20k,Some college,1 to 3 time per week,Never,4.54,Urban(>=75% urban),32.124288
+64995,61,W,F,1,less than $20k,College graduate and above,None,Past,4.93,Urban(>=75% urban),28.726639024
+66056,54,B,M,8,$35k-$74k,Some college,4 or more per week,Never,,Urban(>=75% urban),38.629438603
+67877,67,B,F,6,$20k-$34k,Some college,None,Never,5.64,Urban(>=75% urban),36.856092493
+68770,86,B,F,2,less than $20k,Less than high school,1 to 3 time per week,Never,3.1,Urban(>=75% urban),25.684994892
+70585,63,W,F,8,$35k-$74k,College graduate and above,4 or more per week,Never,7.58,Urban(>=75% urban),36.311983471
+71836,53,W,F,9,$75k and above,College graduate and above,4 or more per week,Never,7,Urban(>=75% urban),19.837742504
+72044,71,W,M,8,$35k-$74k,College graduate and above,1 to 3 time per week,Past,,Urban(>=75% urban),29.41122449
+73479,91,W,F,,Refused,High school graduate,4 or more per week,Past,7.33,Urban(>=75% urban),26.9952
+74231,60,B,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,4.6,Urban(>=75% urban),42.794484912
+74619,80,W,F,7,$35k-$74k,High school graduate,4 or more per week,Current,8.19,Urban(>=75% urban),20.90047871
+75486,70,W,M,8,$35k-$74k,Some college,1 to 3 time per week,Never,4.72,Urban(>=75% urban),26.43079185
+75889,57,W,M,5,$20k-$34k,High school graduate,4 or more per week,Never,,Urban(>=75% urban),41.632137346
+80133,55,B,F,6,$20k-$34k,High school graduate,1 to 3 time per week,Current,,Urban(>=75% urban),35.314958028
+86874,60,B,M,8,$35k-$74k,High school graduate,,Past,,Urban(>=75% urban),37.057693275
+88165,68,B,M,7,$35k-$74k,College graduate and above,1 to 3 time per week,Never,,Urban(>=75% urban),30.939189189
+89064,66,W,M,6,$20k-$34k,College graduate and above,None,Past,4.5,Mixed(25-75% urban),24.752276042
+89203,78,W,M,4,less than $20k,High school graduate,4 or more per week,Past,5.41,Mixed(25-75% urban),23.865461018
+90856,50,W,M,6,$20k-$34k,Less than high school,None,Current,5.43,Rural(<=25% urban),30.340679522
+93199,78,W,M,7,$35k-$74k,College graduate and above,4 or more per week,Never,5.92,Urban(>=75% urban),30.026421209
+94480,55,B,F,4,less than $20k,Some college,None,Never,,,27.660580021
+96130,48,W,F,9,$75k and above,Some college,1 to 3 time per week,Past,10.45,,42.934083045
+103137,56,B,F,4,less than $20k,High school graduate,None,Never,2.81,Urban(>=75% urban),45.678219356
+103593,54,B,F,8,$35k-$74k,College graduate and above,None,Current,7.11,Urban(>=75% urban),29.957841914
+103683,60,B,F,8,$35k-$74k,Some college,1 to 3 time per week,Current,8.46,Urban(>=75% urban),43.17733564
+105240,72,W,M,9,$75k and above,College graduate and above,4 or more per week,Past,,Urban(>=75% urban),32.546296296
+105734,67,B,F,4,less than $20k,High school graduate,1 to 3 time per week,Never,8.38,Urban(>=75% urban),34.913792
+106798,80,W,F,5,$20k-$34k,College graduate and above,None,Past,4.85,Urban(>=75% urban),26.56840514
+107236,56,B,F,5,$20k-$34k,High school graduate,None,Never,,Mixed(25-75% urban),25.735424
+108632,75,W,M,,Refused,Some college,1 to 3 time per week,Past,,Urban(>=75% urban),31.276326531
+110777,71,B,F,6,$20k-$34k,College graduate and above,None,Never,9.69,Urban(>=75% urban),35.601662887
+112235,62,B,M,5,$20k-$34k,Some college,4 or more per week,Past,4.43,Rural(<=25% urban),41.479219502
+112636,78,W,F,6,$20k-$34k,College graduate and above,,Never,,,29.579491056
+114065,67,W,F,,Refused,Some college,None,Past,6.43,Urban(>=75% urban),37.441689624
+115011,74,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Current,5.32,Urban(>=75% urban),29.190311419
+115741,63,B,F,,Refused,Some college,None,Past,3.27,,40.599895942
+119786,65,B,M,7,$35k-$74k,Some college,None,Never,5.99,Urban(>=75% urban),22.312011719
+121048,64,B,F,,Refused,Less than high school,None,Past,4.25,Mixed(25-75% urban),47.169590643
+122156,79,W,M,,Refused,College graduate and above,1 to 3 time per week,Past,6.53,Urban(>=75% urban),26.541836735
+122223,75,W,M,8,$35k-$74k,Some college,None,Past,6.72,Urban(>=75% urban),31.222310573
+122793,63,W,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,4.93,Urban(>=75% urban),23.803965248
+124313,53,B,F,,Refused,Less than high school,,Never,3.33,Rural(<=25% urban),47.560040218
+126115,55,B,M,9,$75k and above,Some college,1 to 3 time per week,Past,3.93,Urban(>=75% urban),36.070147191
+126773,57,B,F,3,less than $20k,High school graduate,None,Current,,Mixed(25-75% urban),25.603537981
+126817,56,W,M,10,$75k and above,College graduate and above,4 or more per week,Past,5.38,Urban(>=75% urban),27.003508772
+127041,61,B,M,,Refused,College graduate and above,4 or more per week,,,Urban(>=75% urban),26.309645801
+128867,50,B,M,8,$35k-$74k,Some college,4 or more per week,Current,8.03,Urban(>=75% urban),31.098789923
+133580,63,B,F,3,less than $20k,Less than high school,None,Current,,Urban(>=75% urban),30.502066116
+136054,62,W,F,8,$35k-$74k,College graduate and above,4 or more per week,Never,3.76,Urban(>=75% urban),26.149653979
+137897,61,W,M,4,less than $20k,Some college,,Never,5.77,Urban(>=75% urban),
+138189,77,W,F,3,less than $20k,High school graduate,None,Never,,Urban(>=75% urban),19.613739227
+138361,60,W,F,2,less than $20k,High school graduate,None,Never,,Urban(>=75% urban),37.118916437
+141323,85,W,F,7,$35k-$74k,Some college,4 or more per week,Never,6.37,Urban(>=75% urban),19.534248521
+141701,61,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Past,,,25.824489796
+142168,61,W,F,9,$75k and above,Some college,None,Never,3.53,Urban(>=75% urban),35.108204518
+142404,49,W,F,9,$75k and above,High school graduate,1 to 3 time per week,Never,10.1,Mixed(25-75% urban),27.981009365
+142619,62,B,M,5,$20k-$34k,Some college,4 or more per week,Current,8.68,Urban(>=75% urban),23.048183391
+142884,57,B,M,6,$20k-$34k,Less than high school,1 to 3 time per week,Current,5.89,Urban(>=75% urban),18.395977509
+145600,50,W,F,2,less than $20k,College graduate and above,1 to 3 time per week,Never,18.76,Urban(>=75% urban),30.550292969
+148263,58,B,M,9,$75k and above,College graduate and above,None,Past,4.26,Urban(>=75% urban),39.129384583
+148808,81,B,F,6,$20k-$34k,College graduate and above,None,Past,7.39,Urban(>=75% urban),30.541363163
+153134,58,B,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,5.82,Urban(>=75% urban),31.029061694
+154075,56,W,M,9,$75k and above,Some college,None,Past,5.71,Urban(>=75% urban),32.56755102
+154656,80,W,M,5,$20k-$34k,College graduate and above,1 to 3 time per week,Never,5.39,Urban(>=75% urban),27.439294427
+156702,65,W,M,5,$20k-$34k,College graduate and above,1 to 3 time per week,Past,6.53,Rural(<=25% urban),29.983138266
+157674,64,W,M,10,$75k and above,College graduate and above,1 to 3 time per week,Past,4.43,Urban(>=75% urban),30.20703125
+159276,63,B,M,10,$75k and above,College graduate and above,1 to 3 time per week,Never,7.25,,26.541836735
+165013,55,B,M,5,$20k-$34k,College graduate and above,None,Past,,Rural(<=25% urban),30.713410411
+166377,65,B,F,2,less than $20k,High school graduate,1 to 3 time per week,Never,4.27,Urban(>=75% urban),30.224771664
+171578,65,B,M,9,$75k and above,College graduate and above,4 or more per week,Never,,Urban(>=75% urban),26.713736161
+172696,71,B,M,4,less than $20k,Less than high school,4 or more per week,Never,7.51,Urban(>=75% urban),26.685306122
+174732,67,W,F,7,$35k-$74k,Some college,4 or more per week,Never,4.58,Urban(>=75% urban),27.496242644
+175472,51,B,F,7,$35k-$74k,High school graduate,1 to 3 time per week,Past,7.32,Urban(>=75% urban),37.195767196
+177707,47,B,M,4,less than $20k,College graduate and above,4 or more per week,Past,,Urban(>=75% urban),40.171428571
+178232,48,B,M,,Refused,Some college,1 to 3 time per week,Never,3.31,Urban(>=75% urban),32.320322762
+182182,77,W,M,9,$75k and above,High school graduate,4 or more per week,Past,,Rural(<=25% urban),31.451165721
+183976,84,W,M,6,$20k-$34k,Some college,1 to 3 time per week,Past,,Urban(>=75% urban),29.631612674
+185865,69,B,F,2,less than $20k,Less than high school,4 or more per week,Past,7.89,Urban(>=75% urban),28.666777778
+188330,75,W,F,6,$20k-$34k,College graduate and above,1 to 3 time per week,Never,,,20.848595213
+193611,80,W,F,7,$35k-$74k,High school graduate,4 or more per week,Never,6.62,Urban(>=75% urban),23.525228758
+193806,57,B,F,5,$20k-$34k,High school graduate,,Never,6.8,Urban(>=75% urban),46.511695255
+196031,58,B,M,4,less than $20k,College graduate and above,4 or more per week,Current,9.7,,25.765817901
+196474,65,B,F,,Refused,College graduate and above,1 to 3 time per week,Never,8.27,Urban(>=75% urban),38.460692576
+197500,67,W,F,7,$35k-$74k,College graduate and above,1 to 3 time per week,Never,5.19,,27.435720845
+199140,59,B,F,7,$35k-$74k,Some college,1 to 3 time per week,Past,4.6,Urban(>=75% urban),26.229860365
+200193,65,W,M,10,$75k and above,Some college,1 to 3 time per week,Never,4.27,Urban(>=75% urban),25.014921947
+200202,90,B,F,3,less than $20k,Some college,4 or more per week,Past,4.77,Urban(>=75% urban),25.744628906
+200933,70,B,F,2,less than $20k,Less than high school,4 or more per week,Past,7.88,,28.72681359
+204563,79,B,F,2,less than $20k,Less than high school,4 or more per week,Never,,Urban(>=75% urban),29.431163422
+205349,56,B,M,9,$75k and above,High school graduate,1 to 3 time per week,Current,3.67,Urban(>=75% urban),30.860533501
+205554,57,W,F,9,$75k and above,Some college,4 or more per week,Past,5.32,,31.173595364
+206981,69,W,F,6,$20k-$34k,High school graduate,4 or more per week,Never,,Mixed(25-75% urban),28.242653811
+209661,59,W,F,10,$75k and above,College graduate and above,1 to 3 time per week,Never,6.16,Mixed(25-75% urban),37.758789063
+210137,66,B,M,3,less than $20k,Less than high school,None,Current,,Urban(>=75% urban),28.466087698
+212213,77,W,M,9,$75k and above,College graduate and above,4 or more per week,Past,,Urban(>=75% urban),22.255639098
+212885,47,W,F,9,$75k and above,Some college,None,Past,5.07,,24.480970767
+214122,51,B,M,2,less than $20k,Some college,None,Current,6.64,Urban(>=75% urban),21.992132908
+214227,62,B,M,7,$35k-$74k,Some college,None,Never,,Urban(>=75% urban),32.320322762
+214798,54,B,F,,Refused,College graduate and above,None,Never,5.14,Urban(>=75% urban),37.852773554
+215620,56,B,M,6,$20k-$34k,Less than high school,None,Past,,,32.27507716
+219133,64,W,F,,Refused,College graduate and above,4 or more per week,Never,3.83,Urban(>=75% urban),24.920955571
+219417,66,W,F,10,$75k and above,College graduate and above,1 to 3 time per week,Never,4.72,Urban(>=75% urban),31.27289282
+219842,56,B,F,,Refused,Some college,None,Past,6.98,Urban(>=75% urban),35.633664
+223242,52,B,F,2,less than $20k,High school graduate,1 to 3 time per week,Never,6.43,Urban(>=75% urban),33.790838786
+223349,74,B,F,4,less than $20k,High school graduate,1 to 3 time per week,Never,5.2,Urban(>=75% urban),28.608194444
+224196,48,B,M,4,less than $20k,Less than high school,4 or more per week,Past,6.13,Urban(>=75% urban),28.675012411
+224239,61,B,M,9,$75k and above,College graduate and above,None,Never,7.6,Rural(<=25% urban),35.368063228
+225115,77,W,M,10,$75k and above,College graduate and above,1 to 3 time per week,Never,8.71,Urban(>=75% urban),30.340679522
+228282,77,W,M,6,$20k-$34k,Some college,1 to 3 time per week,Never,,,24.450068871
+228604,70,B,F,2,less than $20k,Less than high school,1 to 3 time per week,Past,5.85,Rural(<=25% urban),30.996472663
+228774,66,B,F,5,$20k-$34k,High school graduate,4 or more per week,Never,5.38,Urban(>=75% urban),32.609863281
+229434,65,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Never,,Urban(>=75% urban),31.664272961
+230799,66,B,M,3,less than $20k,Less than high school,1 to 3 time per week,Never,3.37,Urban(>=75% urban),34.376016663
+232077,52,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Never,6.48,Mixed(25-75% urban),33.442567568
+232202,51,B,F,10,$75k and above,Some college,4 or more per week,Past,3.53,Urban(>=75% urban),27.364605792
+233100,73,W,M,9,$75k and above,College graduate and above,None,Never,4.46,Urban(>=75% urban),26.111428571
+234095,90,W,M,,Refused,Some college,None,Never,3.12,Rural(<=25% urban),27.947073993
+237350,51,B,M,4,less than $20k,Less than high school,4 or more per week,Current,8.34,Urban(>=75% urban),21.629469383
+239043,51,W,F,8,$35k-$74k,College graduate and above,1 to 3 time per week,Never,6.6,Urban(>=75% urban),31.455775234
+239864,45,B,F,7,$35k-$74k,College graduate and above,1 to 3 time per week,Past,3.62,Urban(>=75% urban),29.692138672
+242188,59,B,M,7,$35k-$74k,Some college,4 or more per week,Past,9.42,Urban(>=75% urban),36.491926965
+242349,53,B,M,8,$35k-$74k,College graduate and above,None,Past,4.03,Urban(>=75% urban),34.055363322
+245142,75,W,F,9,$75k and above,Some college,None,Past,6.4,Urban(>=75% urban),26.022955351
+248368,76,W,M,9,$75k and above,College graduate and above,1 to 3 time per week,Never,4.35,,30.406574394
+251085,70,W,F,7,$35k-$74k,Some college,4 or more per week,Never,4.87,Urban(>=75% urban),23.283600744
+251837,64,B,M,7,$35k-$74k,College graduate and above,1 to 3 time per week,Past,,Urban(>=75% urban),29.994666667
+252243,69,B,F,8,$35k-$74k,College graduate and above,None,Never,3.91,Urban(>=75% urban),28.056235828
+258361,63,W,M,10,$75k and above,College graduate and above,4 or more per week,Never,,Urban(>=75% urban),25.101869355
+260111,57,B,M,7,$35k-$74k,Some college,1 to 3 time per week,Never,,Urban(>=75% urban),46.785300926
+260798,62,W,F,8,$35k-$74k,Some college,1 to 3 time per week,Never,6.87,Urban(>=75% urban),35.140553615
+266083,57,B,M,8,$35k-$74k,Some college,1 to 3 time per week,Past,,Urban(>=75% urban),39.499806465
+267510,78,W,F,,Refused,College graduate and above,4 or more per week,Never,3.89,Urban(>=75% urban),23.239275856
+270299,80,W,M,9,$75k and above,College graduate and above,4 or more per week,Past,3.43,Urban(>=75% urban),24.777027027
+270541,68,W,F,4,less than $20k,College graduate and above,None,Current,8.44,Urban(>=75% urban),30.669911664
+272720,79,W,F,,Refused,College graduate and above,4 or more per week,Never,6.33,Mixed(25-75% urban),23.352249135
+273151,70,B,F,5,$20k-$34k,Less than high school,1 to 3 time per week,Never,3.88,Urban(>=75% urban),24.304820937
+273567,83,W,F,6,$20k-$34k,Some college,1 to 3 time per week,Never,8.71,Urban(>=75% urban),25.457751479
+273923,65,B,M,8,$35k-$74k,Some college,None,Past,8.46,Urban(>=75% urban),26.541836735
+274231,83,W,F,3,less than $20k,Less than high school,4 or more per week,Never,6.69,Urban(>=75% urban),20.424072266
+275577,78,B,F,4,less than $20k,Less than high school,1 to 3 time per week,Past,8.43,Urban(>=75% urban),27.631141345
+275648,57,W,F,9,$75k and above,Less than high school,None,Never,7.17,Urban(>=75% urban),24.408208816
+275907,62,W,M,8,$35k-$74k,College graduate and above,4 or more per week,Never,6.15,Mixed(25-75% urban),26.49672684
+276556,59,W,F,8,$35k-$74k,High school graduate,1 to 3 time per week,Never,14.59,Urban(>=75% urban),25.318127251
+277817,64,B,F,4,less than $20k,High school graduate,4 or more per week,Never,3.7,Urban(>=75% urban),27.588870315
+278687,65,W,F,6,$20k-$34k,Some college,4 or more per week,Never,3.96,,21.37892995
+279720,64,B,M,,Refused,Some college,1 to 3 time per week,Never,,Urban(>=75% urban),23.239669421
+289898,65,B,F,2,less than $20k,High school graduate,4 or more per week,Never,13.67,,32.23633157
+300329,59,B,F,7,$35k-$74k,High school graduate,None,Never,5.65,Urban(>=75% urban),43.089958536
+301830,77,B,F,,Refused,Less than high school,None,Never,11.06,Urban(>=75% urban),37.209570313
