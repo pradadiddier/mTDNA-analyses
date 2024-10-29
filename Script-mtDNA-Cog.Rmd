@@ -1,0 +1,458 @@
+---
+title: "mtDNA"
+output: html_document
+date: "2024-10-29"
+---
+## Load packages and file locations etc.
+```{r}
+rm(list=ls())
+project.folder = paste0(print(here::here()),'/')
+source(paste0(project.folder,'create_folder_structure.R'))
+source(paste0(functions.folder,'script_initiate.R'))
+library('gt') ; library('gtsummary')
+```
+
+## Load pilot data
+```{r}
+dat_mtDNA_Animnaming = readr::read_csv(paste0(pilot.folder,'mtDNA_Animnaming.csv'))
+dat_mtDNA_calcvars = readr::read_csv(paste0(pilot.folder,'mtDNA_calcvars.csv'))
+dat_mtDNA_climate_cvi = readr::read_csv(paste0(pilot.folder,'mtDNA_climate_cvi.csv'))
+dat_mtDNA_Cog_impairment = readr::read_csv(paste0(pilot.folder,'mtDNA_Cog_impairment.csv'))
+dat_mtDNA_Cog_Scores = readr::read_csv(paste0(pilot.folder,'mtDNA_Cog_Scores.csv'))
+dat_mtDNA_Ids = readr::read_csv(paste0(pilot.folder,'mtDNA_Ids.csv'))
+dat_mtDNA_letterF = readr::read_csv(paste0(pilot.folder,'mtDNA_letterF.csv'))
+dat_mtDNA_moca = readr::read_csv(paste0(pilot.folder,'mtDNA_moca.csv'))
+dat_mtDNA_sis = readr::read_csv(paste0(pilot.folder,'mtDNA_sis.csv'))
+dat_mtDNA_WLL = readr::read_csv(paste0(pilot.folder,'mtDNA_WLL.csv'))
+```
+
+## Load processed mtDNA mutation data
+```{r}
+dat_mtDNA_mutations = readr::read_csv(paste0(pilot.folder,'variants_gene.csv'))
+```
+
+# Choose mutation to run model with as output
+```{r}
+seed_grid = names(dat_mtDNA_mutations)[c(16:ncol(dat_mtDNA_mutations))]
+```
+
+## Iterate over mutations and load model results
+```{r}
+model_0_results = data.frame(); model_1_results = data.frame() ; model_2_results = data.frame()
+for(outcome_mutation in seed_grid){
+  print(outcome_mutation)
+  
+  # Model 0: load csv
+  model_0_results_current = read_csv(paste0(model.output.folder,"pilot_model0_",outcome_mutation,".csv")) %>%
+    mutate(outcome=outcome_mutation)
+  model_0_results = data.table::rbindlist(list(model_0_results,model_0_results_current))
+  
+  # Model 1: load csv
+  model_1_results_current = read_csv(paste0(model.output.folder,"pilot_model1_",outcome_mutation,".csv")) %>%
+    mutate(outcome=outcome_mutation)
+  model_1_results = data.table::rbindlist(list(model_1_results,model_1_results_current))
+  
+  # Model 2: load csv
+  model_2_results_current = read_csv(paste0(model.output.folder,"pilot_model2_",outcome_mutation,".csv")) %>%
+    mutate(outcome=outcome_mutation)
+  model_2_results = data.table::rbindlist(list(model_2_results,model_2_results_current))
+}
+```
+
+## Save csv
+```{r}
+write_csv(model_0_results,paste0(model.output.folder,"pilot_model0_all_combined.csv"))
+write_csv(model_1_results,paste0(model.output.folder,"pilot_model1_all_combined.csv"))
+write_csv(model_2_results,paste0(model.output.folder,"pilot_model2_all_combined.csv"))
+```
+
+
+## Integrating the REGARDS datasets
+
+# Install and load the moments package if not already installed
+```{r}
+library(moments)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(ggrepel)
+```
+#Reading all the datasets and merging them progressively
+This current pilot analses do not include samples during follow-up
+However, cognitive trajectories will be determined longitudinally
+```{r}
+#identifiers
+ids <- read.csv("mtDNA_Ids.csv")
+#covariates
+vars <- read.csv("mtDNA_calcvars.csv")
+#REGARDS dataset
+regards <- read.csv("REGARDS-mtDNA-VariantsBySample.csv")
+df_filtered <- regards %>%
+  filter(!grepl("^rpt", SAMPLE))
+df <- df_filtered %>%
+  separate(SAMPLE, into = c("Sample_ID", "sample_2"), sep = "-")
+```
+#Merging IDs and covariates
+```{r}
+basic1 <- merge(ids, vars, by = "id", all = TRUE)
+colnames(basic1)
+basic1.2 <- merge(basic1, df, by = "Sample_ID")
+summary(basic1.2$Wbc)
+sd(basic1.2$Wbc, na.rm = TRUE)
+table(basic1.2$Urbangrp)
+```
+#Descriptive statistics for all the covariates
+Age
+```{r}
+colnames(basic1)
+summary(basic1.2$Age)
+sd(basic1.2$Age)
+#basic histogram
+hist(basic1$Age, 
+     main = "Age of REGARDS participants", 
+     xlab = "Age", 
+     ylab = "Frequency", 
+     col = "lightblue", 
+     border = "black")
+#Density plot 
+plot(density(basic1$Age), 
+     main = "Age of REGARDS participants", 
+     xlab = "Age", 
+     ylab = "Density", 
+     col = "blue")
+#Boxplot
+boxplot(basic1$Age, 
+        main = "Boxplot of Data", 
+        ylab = "Values", 
+        col = "lightgreen") #only one outlier
+#Q-Q plot
+qqnorm(basic1$Age)
+qqline(basic1$Age, col = "red")
+shapiro.test(basic1$Age) #it is not a normally distributed variable
+#Skewness and kurtosis
+# Calculate skewness and kurtosis
+skewness(basic1$Age) #0.3775963 The distribution is positively skewed or right-skewed, meaning the right tail (higher values) is longer or fatter than the left tail.
+kurtosis(basic1$Age) #2.573131 The distribution is platykurtic. It has lighter tails and a flatter peak than the normal distribution, indicating fewer data are in the tails and more are in the shoulders.
+```
+Race
+```{r}
+#colnames(basic1)
+ table(basic1.2$Race)
+
+#Race
+freq_dist1 <- table(basic1$Race)
+print(freq_dist1)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Race", 
+        xlab = "Race", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Race", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Race)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Race", x = "Categories", y = "Absolute number of participants")
+```
+Gender
+```{r}
+table(basic1.2$Gender)
+
+a <- table(basic1$Gender)
+prop.table(a) #we have higher number of women in the subset
+
+#Gender
+freq_dist1 <- table(basic1$Gender)
+print(freq_dist1)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Gender", 
+        xlab = "Gender", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Gender", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Gender)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Gender", x = "Categories", y = "Absolute number of participants")
+```
+Income
+```{r}
+colnames(basic1)
+
+table(basic1$Income)
+prop.table(a) 
+#Income=1; <5K
+#Income=2; 5-10K 
+#Income=3; 10-15K 
+#Income=4; 15-20K 
+#Income=5; 20-25K 
+#Income=6; 25-35K 
+#Income=7; 35-50K 
+#Income=8; 50-75K 
+#Income=9; 75-150K 
+#Income=10; >150K 
+
+#Income
+freq_dist1 <- table(basic1$Income)
+print(freq_dist1)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Income", 
+        xlab = "Income", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Income", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Income)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Income", x = "Categories", y = "Absolute number of participants")
+```
+Income 4 categories
+```{r}
+colnames(basic1) #Income_4cat
+
+table(basic1.2$Income_4cat)
+prop.table(a) 
+#Income_4cat='less than $20k';
+#Income_4cat='$20k-$34k';
+#Income_4cat='$35k-$74k';
+#Income_4cat='$75k and above';
+
+#Income_4cat, four categories
+freq_dist1 <- table(basic1$Income_4cat)
+print(freq_dist1)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Income (four categories)", 
+        xlab = "Income", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Income", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Income_4cat)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Income (four categories)", x = "Categories", y = "Absolute number of participants")
+```
+Education 
+ED_Cat
+```{r}
+table(basic1.2$ED_Cat) 
+
+#ED_Cat='Less than high school';
+#ED_Cat='High school graduate';
+#ED_Cat='Some college';
+#ED_Cat='College graduate and above';
+
+#ED_cat, 
+freq_dist1 <- table(basic1$ED_Cat)
+print(freq_dist1)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Education", 
+        xlab = "Physical Activity", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Education", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$ED_Cat)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Education", x = "Categories", y = "Absolute number of participants")
+```
+Physical activity
+Exercise_cat
+```{r}
+colnames(basic1.2) 
+
+#Exercise_cat='None';
+#Exercise_cat='1 to 3 time per week';
+#Exercise_cat='4 or more per week';
+
+table(basic1.2$Exercise_cat)
+print(freq_dist1)
+#freq_dist2 <- table(basic1$Exercise_cat, useNA = "ifany")
+#print(freq_dist2)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Physical Activity", 
+        xlab = "Education", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Physical Activity", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Exercise_cat)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Physical Activity", x = "Categories", y = "Absolute number of participants")
+```
+Smoking
+```{r}
+colnames(basic1) 
+#Smoke='Current';
+#Smoke='Past';
+#Smoke='Never';
+
+table(basic1.2$Smoke)
+print(freq_dist1)
+#freq_dist2 <- table(basic1$Smoke, useNA = "ifany")
+#print(freq_dist2)
+prop_dist1 <- prop.table(freq_dist1)
+print(prop_dist1)
+summary_table <- data.frame(
+  Category = names(freq_dist1),
+  Frequency = as.vector(freq_dist1),
+  Proportion = as.vector(prop_dist1)
+)
+
+# Bar plot using base R
+barplot(freq_dist1, 
+        main = "Bar Plot of Categories for Smoking", 
+        xlab = "Education", 
+        ylab = "Absolute number", 
+        col = "lightblue", 
+        border = "black")
+
+# Pie chart using base R
+pie(freq_dist1, 
+    main = "Pie Chart of Categories for Smoking", 
+    col = rainbow(length(freq_dist1)))
+
+# Bar plot using ggplot2
+# Create a data frame
+data_df <- data.frame(Category = basic1$Smoke)
+ggplot(data_df, aes(x = Category)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Bar Plot of Categories for Smoking", x = "Categories", y = "Absolute number of participants")
+```
+BMI
+```{r}
+colnames(basic1) 
+
+summary(basic1$BMI)
+sd(basic1$BMI, )
+#basic histogram
+hist(basic1$BMI, 
+     main = "BMI of REGARDS participants", 
+     xlab = "BMI", 
+     ylab = "Frequency", 
+     col = "lightblue", 
+     border = "black")
+#Density plot 
+# Remove NAs
+#data_clean <- na.omit(basic1$BMI)
+#plot(density(data_clean$BMI), 
+#     main = "BMI of REGARDS participants", 
+#     xlab = "BMI", 
+#     ylab = "Density", 
+#     col = "blue")
+#Boxplot
+boxplot(basic1$BMI, 
+        main = "Boxplot of Data", 
+        ylab = "Values", 
+        col = "lightgreen") #only one outlier
+#Q-Q plot
+qqnorm(basic1$BMI)
+qqline(basic1$BMI, col = "red")
+shapiro.test(basic1$BMI) #it is not a normally distributed variable
+#Skewness and kurtosis
+# Calculate skewness and kurtosis
+#skewness(basic1$BMI) 
+#kurtosis(basic1$BMI) 
+```
+
+
